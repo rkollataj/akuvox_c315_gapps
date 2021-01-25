@@ -1,4 +1,4 @@
-# Google Play on Akuvox c315
+# Google Play on Akuvox C315
 
 This how to describes installation of Google Play (and other basic Google services) on Akuvox C315. I have Akuvox C315W specifically, however I believe that below steps should work for all C31x series. 
 
