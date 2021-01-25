@@ -2,9 +2,9 @@
 
 This how to describes installation of Google Play (and other basic Google services) on Akuvox C315. I have Akuvox C315W specifically, however I believe that below steps should work for all C31x series. 
 
-As a base for installation I used minimal [Open GApps](https://opengapps.org/) version (i.e. pico). You can probably use different ones as well. It appeared that Akuvox recovery partition don't have option to install ZIP updates as required by Open GApps project. To workaround it I installed all apps manually following [this guide](https://tinkerboarding.co.uk/forum/thread-553.html).
+As a base for installation I used minimal [Open GApps](https://opengapps.org/) version (i.e. pico). You can probably use different ones as well (not tested). It appeared that Akuvox recovery partition don't have option to install ZIP updates as required by Open GApps project. To workaround it I installed all apps manually following [this guide](https://tinkerboarding.co.uk/forum/thread-553.html). The guide describes steps on Linux machine. You should be able to use Windows or macOS as well after finding appropriate alternatives to commands from step 9 onwards.
 
-Note that you will be required to dismantle monitor's case and in general you are doing everything at your own risk. You've been warned so let's begin :)
+Note that you will be required to dismantle monitor's case and that you are doing everything at your own risk. You've been warned so let's begin :)
 
 1. Change permission admin to be able to access applications as described [here](http://wiki.akuvox.com/doku.php?id=indoor_monitor:feature_guides:how_to_install_apk_on_android_indoor_monitor)
 2. In monitor's web config go to Phone->Key/Display and configure one of areas to run Setings
@@ -34,7 +34,7 @@ unzip [name of gapps zip file].zip -d gapps/pkg
 ```
 find -name "*.tar.[g|l|x]z" -o -name "*.tar" | xargs -n 1 tar -xC tmp -f
 ```
-12. Create script in gapps directory
+12. Create script.sh in gapps directory
 ```
 #!/bin/bash
 for dir in tmp/*/
@@ -63,7 +63,7 @@ adb shell
 rm -rf /system/priv-app/PackageInstaller /data/system/users/0/runtime-permissions.xml
 exit
 ```
-16. Reboot the board and enoy Google Play!
+16. Reboot the board and enjoy Google Play!
 ```
 adb reboot
 ```
