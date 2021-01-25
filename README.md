@@ -8,18 +8,18 @@ This guide describes steps on Linux machine. You should be able to use Windows o
 
 Note that you will be required to dismantle monitor's case and that you are doing everything at your own risk. You've been warned so let's begin :)
 
-1. Change permission admin to be able to access applications as described [here](http://wiki.akuvox.com/doku.php?id=indoor_monitor:feature_guides:how_to_install_apk_on_android_indoor_monitor)
+1. Change permission mode to admin to be able to access applications as described [here](http://wiki.akuvox.com/doku.php?id=indoor_monitor:feature_guides:how_to_install_apk_on_android_indoor_monitor)
 2. In monitor's web config go to Phone->Key/Display and configure one of areas to run Setings
 ```
 Type: Cusom APK
 Value: com.android.settings
 Label: Settings
 ```
-3. Open android settings via configre area (to close it later you can kill it via "Applications" menu)
+3. Open android settings via configred area (to close it later you can kill it via "Applications" menu)
 4. Go to "System Information" and tap "Model Number" until "Developer's Options" will be enabled
 5. Go up and enter "Developer's Options" menu
 6. Check if "USB Debugging" is enabled
-7. Dismantle monitor case. Insert micro USB cable to your monitor and attach it to your computer. After confirming pop-up on monitor screen you should be able to use ADB with your Akuvox now.
+7. Dismantle monitor case. Insert micro USB cable to your monitor and attach it to your computer. After confirming pop-up on the monitor screen you should be able to use ADB with your Akuvox.
 8. Download prebuilt Open GApps [here](https://sourceforge.net/projects/opengapps/files/arm/). Architecture: ARM, Android Version: 6.0 (I used open_gapps-arm-6.0-pico-20210123.zip)
 9. Prepare temporary directories
 ```
@@ -65,8 +65,8 @@ adb shell
 rm -rf /system/priv-app/PackageInstaller /data/system/users/0/runtime-permissions.xml
 exit
 ```
-16. Reboot the board and enjoy Google Play!
+16. Reboot the board.
 ```
 adb reboot
 ```
-
+17. Open applications on your Akuvox monitor and enjoy Google Play!
