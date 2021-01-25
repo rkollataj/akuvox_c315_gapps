@@ -2,7 +2,9 @@
 
 This how to describes installation of Google Play (and other basic Google services) on Akuvox C315. I have Akuvox C315W specifically, however I believe that below steps should work for all C31x series. 
 
-As a base for installation I used minimal [Open GApps](https://opengapps.org/) version (i.e. pico). You can probably use different ones as well (not tested). It appeared that Akuvox recovery partition don't have option to install ZIP updates as required by Open GApps project. To workaround it I installed all apps manually following [this guide](https://tinkerboarding.co.uk/forum/thread-553.html). The guide describes steps on Linux machine. You should be able to use Windows or macOS as well after finding appropriate alternatives to commands from step 9 onwards.
+As a base for installation I used minimal [Open GApps](https://opengapps.org/) version (i.e. pico). You can probably use different ones as well (not tested). It appeared that Akuvox recovery partition don't have option to install ZIP updates as required by Open GApps project. To workaround it I installed all apps manually following [this guide](https://tinkerboarding.co.uk/forum/thread-553.html). 
+
+This guide describes steps on Linux machine. You should be able to use Windows or macOS as well after finding appropriate alternatives to commands from step 9 onwards.
 
 Note that you will be required to dismantle monitor's case and that you are doing everything at your own risk. You've been warned so let's begin :)
 
