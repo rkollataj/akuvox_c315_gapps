@@ -1,2 +1,21 @@
-# akuvox_c315_gapps
-Google Play store on Akuvox c315
+# Google Play on Akuvox c315
+
+This how to describes installation of Google Play (and other basic Google services) on Akuvox C315. I have Akuvox C315W specifically, however I believe that below steps should work for all C31x series. 
+
+As a base for installation I used minimal [Open GApps](https://opengapps.org/) version (i.e. pico). You can probably use different ones as well. It appeared that Akuvox recovery partition don't have option to install ZIP updates as required by Open GApps project. To workaround it I installed all apps manually following [this guide](https://tinkerboarding.co.uk/forum/thread-553.html).
+
+Note that you will be required to dismantle monitor's case and in general you are doing everything at your own risk. You've been warned so let's begin :)
+
+1. Change permission admin to be able to access applications as described [here](http://wiki.akuvox.com/doku.php?id=indoor_monitor:feature_guides:how_to_install_apk_on_android_indoor_monitor)
+2. In monitor's web config go to Phone->Key/Display and configure one of areas to run Setings
+```
+Type: Cusom APK
+Value: com.android.settings
+Label: Settings
+```
+3. Open android settings via configre area (to close it later you can kill it via "Applications" menu)
+4. Go to "System Information" and tap "Model Number" until "Developer's Options" will be enabled
+5. Go up and enter "Developer's Options" menu
+6. Check if "USB Debugging" is enabled
+7. Dismantle monitor case. Insert micro USB cable to your monitor and attach it to your computer. After confirming pop-up on monitor screen you should be able to used ADB with your Akuvox now
+
