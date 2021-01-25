@@ -17,5 +17,54 @@ Label: Settings
 4. Go to "System Information" and tap "Model Number" until "Developer's Options" will be enabled
 5. Go up and enter "Developer's Options" menu
 6. Check if "USB Debugging" is enabled
-7. Dismantle monitor case. Insert micro USB cable to your monitor and attach it to your computer. After confirming pop-up on monitor screen you should be able to used ADB with your Akuvox now
+7. Dismantle monitor case. Insert micro USB cable to your monitor and attach it to your computer. After confirming pop-up on monitor screen you should be able to use ADB with your Akuvox now.
+8. Download prebuilt Open GApps [here](https://sourceforge.net/projects/opengapps/files/arm/). Architecture: ARM, Android Version: 6.0 (I used open_gapps-arm-6.0-pico-20210123.zip)
+9. Prepare temporary directories
+```
+mkdir ~/gapps
+mkdir ~/gapps/pkg
+mkdir ~/gapps/tmp
+mkdir ~/gapps/sys
+```
+10. Unzip the downloaded gapps archive with
+```
+unzip [name of gapps zip file].zip -d gapps/pkg
+```
+11. Enter gapps directory and extract all the relevant packages
+```
+find -name "*.tar.[g|l|x]z" -o -name "*.tar" | xargs -n 1 tar -xC tmp -f
+```
+12. Create script in gapps directory
+```
+#!/bin/bash
+for dir in tmp/*/
+    do
+      pkg=${dir%*/}
+      dpi=$(ls -1 $pkg | head -1)
+
+      echo "Preparing $pkg/$dpi"
+      rsync -aq $pkg/$dpi/ sys/
+    done
+```
+13. Execute the script
+```
+chmod +x script.sh
+./script.sh
+```
+14. Push prepared binaries to monitor
+```
+adb root
+adb remount
+adb push sys/. /system/.
+```
+15. Remove second package installer and existing runtime permissions (permissions will be recreated after reboot)
+```
+adb shell
+rm -rf /system/priv-app/PackageInstaller /data/system/users/0/runtime-permissions.xml
+exit
+```
+16. Reboot the board and enoy Google Play!
+```
+adb reboot
+```
 
